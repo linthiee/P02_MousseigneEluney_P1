@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{a80ea7c3-ad47-4ef4-bfba-5c5abc96f7e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="globals">
+      <UniqueIdentifier>{4fa76894-e026-4d95-9ec5-b9dc866670cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities">
+      <UniqueIdentifier>{dde58b58-8c32-482b-8667-55eabca9a49e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities\player">
+      <UniqueIdentifier>{b8743e4e-e263-4d92-b6cf-115adea6bee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities\enemy">
+      <UniqueIdentifier>{fcf1be6b-6374-4b62-b35b-5990627c26a2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Globals.cpp">
+      <Filter>globals</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Player.cpp">
+      <Filter>entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy.cpp">
+      <Filter>entities\enemy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Globals.h">
+      <Filter>globals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Player.h">
+      <Filter>entities\player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy.h">
+      <Filter>entities\enemy</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
