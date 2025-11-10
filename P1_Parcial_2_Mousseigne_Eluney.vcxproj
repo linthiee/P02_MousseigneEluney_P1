@@ -16,6 +16,7 @@
     <ClCompile Include="src\Entity.cpp" />
     <ClCompile Include="src\ExtraLife.cpp" />
     <ClCompile Include="src\ExtraSpeed.cpp" />
+    <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Globals.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Player.cpp" />
@@ -29,6 +30,7 @@
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\ExtraLife.h" />
     <ClInclude Include="src\ExtraSpeed.h" />
+    <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Globals.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\PowerUpManager.h" />

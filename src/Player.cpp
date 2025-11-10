@@ -46,6 +46,7 @@ void Player::UpdateLife(int life)
 void Player::IsCollidingWith(Entity* otherEntity)
 {
 	Collectible* item = dynamic_cast<Collectible*>(otherEntity);
+
 	if (item != nullptr)
 	{
 		item->WasCollected(this);

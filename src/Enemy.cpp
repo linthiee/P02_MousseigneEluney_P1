@@ -48,8 +48,11 @@ void Enemy::IsCollidingWith(Entity* otherEntity)
 
 	if (player != nullptr)
 	{
-		otherEntity->SetPosition({ static_cast<float>(GetScreenWidth() / 2), static_cast<float>(GetScreenHeight() / 2) });
-		otherEntity->TakeDamage();
+		if (!player->IsInvincible())
+		{
+			player->SetPosition({ static_cast<float>(GetScreenWidth() / 2), static_cast<float>(GetScreenHeight() / 2) });
+			player->TakeDamage();
+		}
 	}
 }
 
