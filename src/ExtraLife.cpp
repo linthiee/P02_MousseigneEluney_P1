@@ -10,7 +10,10 @@ ExtraLife::ExtraLife(Vector2 pos, int texID, float width, float height) : Collec
 
 void ExtraLife::WasCollected(Player* player)
 {
-	player->UpdateLife(1);
+	if (player->GetLife() < 3)
+	{
+		player->UpdateLife(1);
+	}
 }
 
 void ExtraLife::Update()
