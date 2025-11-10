@@ -12,6 +12,7 @@ private:
 	int lives;
 	Vector2 velocity;
 	float speed;
+	float baseSpeed;
 
 	bool isInvincible;
 	float invincibilityTimer;
@@ -22,6 +23,8 @@ public:
 	Player(Vector2 pos, int texID, float width, float height);
 	~Player() {}
 
+	void SetStateManager(StateManager* stateManager);
+
 	int GetLife();
 	void UpdateLife(int life);
 
@@ -31,6 +34,11 @@ public:
 	bool IsInvincible();
 
 	void ActivateScoreMultiplier(int multiplier, float duration);
+	void ActivateSpeedMultiplier(float multiplier, float duration);
+
+	void SetSpeed(float newSpeed); 
+	float GetBaseSpeed();          
+
 	void Update() override;
 	void Draw() override;
 };

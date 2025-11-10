@@ -1,4 +1,5 @@
 #include "ExtraLife.h"
+#include "globals.h"
 
 ExtraLife::ExtraLife(Vector2 pos, int texID, float width, float height) : Collectible(pos, texID, width, height) 
 {
@@ -6,6 +7,8 @@ ExtraLife::ExtraLife(Vector2 pos, int texID, float width, float height) : Collec
 	textureID = texID;
 	this->width = width;
 	this->height = height;
+
+	timer = 10.0f;
 }
 
 void ExtraLife::WasCollected(Player* player)
@@ -18,7 +21,12 @@ void ExtraLife::WasCollected(Player* player)
 
 void ExtraLife::Update()
 {
+	timer -= deltaT;
 
+	if (timer <= 0.0f)
+	{
+		DeleteEntity();
+	}
 }
 
 void ExtraLife::Draw()
