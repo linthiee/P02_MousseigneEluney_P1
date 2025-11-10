@@ -11,17 +11,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Collectible.cpp" />
     <ClCompile Include="src\Enemy.cpp" />
     <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="src\ExtraLife.cpp" />
     <ClCompile Include="src\Globals.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\PowerUpManager.cpp" />
+    <ClCompile Include="src\ScoreMultiplyer.cpp" />
+    <ClCompile Include="src\StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Collectible.h" />
     <ClInclude Include="src\Enemy.h" />
     <ClInclude Include="src\Entity.h" />
+    <ClInclude Include="src\ExtraLife.h" />
     <ClInclude Include="src\Globals.h" />
     <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\PowerUpManager.h" />
+    <ClInclude Include="src\ScoreMultiplyer.h" />
+    <ClInclude Include="src\StateManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

@@ -12,15 +12,18 @@ private:
 	Vector2 velocity;
 	float speed;
 
+	Player* target;
+
 public:
 
-	Enemy(Vector2 pos, int texID, float width, float height);
+	Enemy(Vector2 pos, int texID, float width, float height, Player* target);
 	~Enemy() {}
 
-	void Initialize(std::vector<Enemy*> enemies);
 	void Spawn();
 
-	void Update(Player* player);
+	void IsCollidingWith(Entity* otherEntity) override;
+
+	void Update() override; 
 	void Draw() override;
 };
 

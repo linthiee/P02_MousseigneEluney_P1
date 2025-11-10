@@ -10,10 +10,12 @@ protected:
 	float width;
 	float height;
 
+	bool deleteEntity;
+
 public:
 
 	Entity(Vector2 pos, int texID, float width, float height);
-	~Entity() {}
+	virtual ~Entity() {}
 
 	Vector2 GetPosition() const;
 	int GetTextureID() const;
@@ -22,7 +24,11 @@ public:
 
 	void SetPosition(Vector2 pos);
 
-	//virtual void IsCollidingWith(Entity* otherEntity);
+	void DeleteEntity();
+	bool IsEntityDeleted();  
+
+	virtual void IsCollidingWith(Entity* otherEntity);
+	virtual void TakeDamage();
 
 	virtual void Update();
 	virtual void Draw();
