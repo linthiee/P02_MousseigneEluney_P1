@@ -31,9 +31,9 @@ Game::Game()
 
 Game::~Game()
 {
-    for (Entity* entity : entities)
+    for (int i = 0; i < entities.size(); i++)
     {
-        delete entity;
+        delete entities[i];
     }
     entities.clear();
 
@@ -152,8 +152,8 @@ void Game::InitializeEnemyQuant()
     for (int i = 0; i < enemyQuant; i++)
     {
         Vector2 spawnPos = GetSafeSpawnPosition(enemyWidth, enemyHeight);
-
         Enemy* enemy = new Enemy(spawnPos, 0, enemyWidth, enemyHeight, player);
+
         entities.push_back(enemy);
     }
 }
@@ -176,8 +176,10 @@ bool Game::CheckRectCollision(Vector2 posA, float widthA, float heightA, Vector2
 
 bool Game::IsCollidingWithAny(Vector2 newPos, float newWidth, float newHeight)
 {
-    for (Entity* existingEntity : entities) 
+    for (int i = 0; i < entities.size(); i++)
     {
+        Entity* existingEntity = entities[i];
+
         if (CheckRectCollision(newPos, newWidth, newHeight, existingEntity->GetPosition(), existingEntity->GetWidth(), existingEntity->GetHeight()))
         {
             return true;
@@ -188,13 +190,31 @@ bool Game::IsCollidingWithAny(Vector2 newPos, float newWidth, float newHeight)
 
 Vector2 Game::GetSafeSpawnPosition(float newWidth, float newHeight)
 {
-    Vector2 newPos;
+    Vector2 newPos = { 0, 0 };
     bool isSafe = false;
     int attempts = 0;
 
     do
     {
-        newPos = { (float)GetRandomValue(20, screenWidth - 20 - (int)newWidth), (float)GetRandomValue(20, screenHeight - 20 - (int)newHeight) };
+        int spawnChance = GetRandomValue(1, 100);
+
+        if (spawnChance <= 25)
+        {
+            newPos = { static_cast<float>(GetRandomValue(0, 800)), 0.0f };
+        }
+        else if (spawnChance <= 50)
+        {
+            newPos = { static_cast<float>(GetRandomValue(0, 800)), 450.0f };
+        }
+        else if (spawnChance <= 75)
+        {
+            newPos = { 0.0f, static_cast<float>(GetRandomValue(0, 450)) };
+        }
+        else
+        {
+            newPos = { 800.0f, static_cast<float>(GetRandomValue(0, 450)) };
+        }
+
         isSafe = !IsCollidingWithAny(newPos, newWidth, newHeight);
         attempts++;
 

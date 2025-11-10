@@ -19,8 +19,6 @@ public:
 	Enemy(Vector2 pos, int texID, float width, float height, Player* target);
 	~Enemy() {}
 
-	void Spawn();
-
 	void IsCollidingWith(Entity* otherEntity) override;
 
 	void Update() override; 
