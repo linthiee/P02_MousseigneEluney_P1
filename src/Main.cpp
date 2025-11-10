@@ -132,7 +132,7 @@ void UpdateDeltaTime()
 
 void InitializeEnemyQuant(std::vector<Entity*>& entities, Player* player)
 {
-	int enemyQuant = GetRandomValue(1, 3);
+	int enemyQuant = GetRandomValue(2, 3);
 
 	for (int i = 0; i < enemyQuant; i++)
 	{

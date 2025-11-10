@@ -31,13 +31,4 @@ void Entity::TakeDamage() {}
 
 void Entity::Update() {}
 
-void Entity::Draw()
-{
-    Texture texture;
-
-    texture.id = static_cast<unsigned int>(textureID);
-    texture.width = static_cast<int>(width);
-    texture.height = static_cast<int>(height);
-
-	DrawTextureEx(texture, position, 0.0f, 1.0f, WHITE);
-}
+void Entity::Draw() {}

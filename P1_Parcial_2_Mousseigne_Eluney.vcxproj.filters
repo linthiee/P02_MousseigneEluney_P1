@@ -4,9 +4,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{a80ea7c3-ad47-4ef4-bfba-5c5abc96f7e7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="globals">
-      <UniqueIdentifier>{4fa76894-e026-4d95-9ec5-b9dc866670cd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="entities">
       <UniqueIdentifier>{dde58b58-8c32-482b-8667-55eabca9a49e}</UniqueIdentifier>
     </Filter>
@@ -22,13 +19,16 @@
     <Filter Include="entities\collectibles\main">
       <UniqueIdentifier>{59cc6464-6170-465a-89fe-580ad169807e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\globals">
+      <UniqueIdentifier>{4fa76894-e026-4d95-9ec5-b9dc866670cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\Globals.cpp">
-      <Filter>globals</Filter>
+      <Filter>src\globals</Filter>
     </ClCompile>
     <ClCompile Include="src\Entity.cpp">
       <Filter>entities</Filter>
@@ -48,19 +48,19 @@
     <ClCompile Include="src\PowerUpManager.cpp">
       <Filter>entities\collectibles\main</Filter>
     </ClCompile>
-    <ClCompile Include="src\StateManager.cpp">
-      <Filter>entities\player</Filter>
-    </ClCompile>
     <ClCompile Include="src\ScoreMultiplyer.cpp">
       <Filter>entities\collectibles</Filter>
     </ClCompile>
     <ClCompile Include="src\ExtraSpeed.cpp">
       <Filter>entities\collectibles</Filter>
     </ClCompile>
+    <ClCompile Include="src\StateManager.cpp">
+      <Filter>entities\player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Globals.h">
-      <Filter>globals</Filter>
+      <Filter>src\globals</Filter>
     </ClInclude>
     <ClInclude Include="src\Entity.h">
       <Filter>entities</Filter>
