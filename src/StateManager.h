@@ -17,6 +17,9 @@ private:
 	float timer;
 	float multiplierTimer;
 
+	float speedMultiplier;     
+	float speedMultiplierTimer; 
+
 public:
 	StateManager(Player* player);
 	~StateManager() {}
@@ -25,6 +28,7 @@ public:
 	void Draw();
 
 	void SetMultiplier(int mult, float duration);
+	void SetSpeedMultiplier(float mult, float duration);
 
 	float GetScore();
 	bool IsGameOver();

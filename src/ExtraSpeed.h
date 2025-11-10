@@ -1,20 +1,22 @@
 #pragma once
 #include "Collectible.h"
 
-class ExtraLife : public Collectible
+class ExtraSpeed : public Collectible
 {
 private:
 
+	float speedIncrease;
 	float timer;
+	float buffDuration;
 
 public:
 
-	ExtraLife(Vector2 pos, int texID, float width, float height);
-	~ExtraLife() {}
+	ExtraSpeed(Vector2 pos, int texID, float width, float height);
+	~ExtraSpeed() {}
 
 	void WasCollected(Player* player) override;
+
 	void Update() override;
 	void Draw() override;
-
 };
 

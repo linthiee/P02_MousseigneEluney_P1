@@ -25,6 +25,8 @@ int main()
 	PowerUpManager powerUpManager(10.0f);
 	StateManager stateManager(player);
 
+	player->SetStateManager(&stateManager);
+
 	SetRandomSeed(static_cast<unsigned int>(time(nullptr)));
 
 	InitializeEnemyQuant(entities, player);

@@ -54,6 +54,9 @@
     <ClCompile Include="src\ScoreMultiplyer.cpp">
       <Filter>entities\collectibles</Filter>
     </ClCompile>
+    <ClCompile Include="src\ExtraSpeed.cpp">
+      <Filter>entities\collectibles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Globals.h">
@@ -81,6 +84,9 @@
       <Filter>entities\player</Filter>
     </ClInclude>
     <ClInclude Include="src\ScoreMultiplyer.h">
+      <Filter>entities\collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExtraSpeed.h">
       <Filter>entities\collectibles</Filter>
     </ClInclude>
   </ItemGroup>

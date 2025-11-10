@@ -8,8 +8,11 @@ StateManager::StateManager(Player* player)
 	score = 0.0f;
 	isGameOver = false;
 	timer = 60.0f;
+
 	multiplier = 1;
 	multiplierTimer = 0.0f;
+	speedMultiplier = 1.0f;     
+	speedMultiplierTimer = 0.0f; 
 }
 
 void StateManager::Update()
@@ -24,6 +27,17 @@ void StateManager::Update()
 		if (multiplierTimer <= 0.0f)
 		{
 			multiplier = 1;
+		}
+	}
+
+	if (speedMultiplierTimer > 0.0f)
+	{
+		speedMultiplierTimer -= deltaT;
+
+		if (speedMultiplierTimer <= 0.0f)
+		{
+			speedMultiplier = 1.0f;
+			player->SetSpeed(player->GetBaseSpeed() * speedMultiplier);
 		}
 	}
 }
@@ -49,6 +63,14 @@ void StateManager::SetMultiplier(int mult, float duration)
 {
 	multiplier = mult;
 	multiplierTimer = duration;
+}
+
+void StateManager::SetSpeedMultiplier(float mult, float duration)
+{
+	speedMultiplier = mult;
+	speedMultiplierTimer = duration;
+
+	player->SetSpeed(player->GetBaseSpeed() * speedMultiplier);
 }
 
 float StateManager::GetScore()
