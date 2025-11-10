@@ -37,51 +37,49 @@ int main()
 	{
 		UpdateDeltaTime();
 
-		if (stateManager.IsGameOver())
+		if (!stateManager.IsGameOver())
 		{
-			break;
-		}
+			stateManager.Update();
 
-		stateManager.Update();
-
-		for (int i = 0; i < entities.size(); i++)
-		{
-			entities[i]->Update();
-		}
-
-		for (int i = 0; i < entities.size(); i++)
-		{
-			for (int j = i + 1; j < entities.size(); j++)
+			for (int i = 0; i < entities.size(); i++)
 			{
-				Entity* a = entities[i];
-				Entity* b = entities[j];
+				entities[i]->Update();
+			}
 
-				if (CollisionRectangles(a, b))
+			for (int i = 0; i < entities.size(); i++)
+			{
+				for (int j = i + 1; j < entities.size(); j++)
 				{
-					a->IsCollidingWith(b);
-					b->IsCollidingWith(a);
+					Entity* a = entities[i];
+					Entity* b = entities[j];
+
+					if (CollisionRectangles(a, b))
+					{
+						a->IsCollidingWith(b);
+						b->IsCollidingWith(a);
+					}
 				}
 			}
-		}
 
-		int activePowerUps = 0;
-		for (int i = static_cast<int>(entities.size()) - 1; i >= 0; i--)
-		{
-			if (entities[i]->IsEntityDeleted())
+			int activePowerUps = 0;
+			for (int i = static_cast<int>(entities.size()) - 1; i >= 0; i--)
 			{
-				delete entities[i];
-				entities.erase(entities.begin() + i);
-			}
-			else
-			{
-				if (dynamic_cast<Collectible*>(entities[i]) != nullptr)
+				if (entities[i]->IsEntityDeleted())
 				{
-					activePowerUps++;
+					delete entities[i];
+					entities.erase(entities.begin() + i);
+				}
+				else
+				{
+					if (dynamic_cast<Collectible*>(entities[i]) != nullptr)
+					{
+						activePowerUps++;
+					}
 				}
 			}
-		}
 
-		powerUpManager.Update(deltaT, entities, activePowerUps);
+			powerUpManager.Update(deltaT, entities, activePowerUps);
+		}
 
 		BeginDrawing();
 
@@ -93,6 +91,31 @@ int main()
 		}
 
 		stateManager.Draw();
+
+		if (stateManager.IsGameOver())
+		{
+			Color color;
+
+			color.a = 125;
+			color.r = 0;
+			color.g = 0;
+			color.b = 0;
+
+			DrawRectangle(0, 0, screenWidth, screenHeight, color);
+
+			DrawText("GAME OVER", screenWidth / 2 - 100, 20, 40, RED);
+
+			if (hasWon)
+			{
+				DrawText("YOU WON!", screenWidth / 2 - 80, 100, 30, GREEN);
+			}
+			else
+			{
+				DrawText("YOU LOSE!", screenWidth / 2 - 80, 100, 30, RED);
+			}
+
+			DrawText(TextFormat("Final Score: %i", static_cast<int>(stateManager.GetScore())), screenWidth / 2 - 100, 160, 20, WHITE);
+		}
 
 		EndDrawing();
 	}

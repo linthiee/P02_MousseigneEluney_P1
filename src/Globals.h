@@ -5,3 +5,4 @@ extern int screenWidth;
 extern int screenHeight;
 
 extern float deltaT; 
+extern bool hasWon;

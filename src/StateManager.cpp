@@ -40,6 +40,8 @@ void StateManager::Update()
 			player->SetSpeed(player->GetBaseSpeed() * speedMultiplier);
 		}
 	}
+
+	CheckGameOver();
 }
 
 void StateManager::Draw()
@@ -97,5 +99,6 @@ void StateManager::CheckGameOver()
 	else if (timer <= 0.0f)
 	{
 		isGameOver = true;
+		hasWon = true;
 	}
 }
