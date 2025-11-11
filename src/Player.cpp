@@ -95,6 +95,14 @@ void Player::ActivateSpeedMultiplier(float multiplier, float duration)
 	}
 }
 
+void Player::ActivateAddScore(int value)
+{
+	if (manager != nullptr)
+	{
+		manager->AddScore(value);
+	}
+}
+
 void Player::SetSpeed(float newSpeed)
 {
 	speed = newSpeed;

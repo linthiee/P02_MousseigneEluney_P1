@@ -63,6 +63,9 @@
     <ClCompile Include="src\Game.cpp">
       <Filter>game</Filter>
     </ClCompile>
+    <ClCompile Include="src\AddScore.cpp">
+      <Filter>entities\collectibles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Globals.h">
@@ -97,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="src\Game.h">
       <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AddScore.h">
+      <Filter>entities\collectibles</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

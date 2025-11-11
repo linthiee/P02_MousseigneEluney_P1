@@ -35,6 +35,7 @@ public:
 
 	void ActivateScoreMultiplier(int multiplier, float duration);
 	void ActivateSpeedMultiplier(float multiplier, float duration);
+	void ActivateAddScore(int value);
 
 	void SetSpeed(float newSpeed); 
 	float GetBaseSpeed();          

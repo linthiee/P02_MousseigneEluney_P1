@@ -4,6 +4,7 @@
 #include "ExtraLife.h"
 #include "ScoreMultiplyer.h"
 #include "ExtraSpeed.h"
+#include "AddScore.h"
 
 PowerUpManager::PowerUpManager(float spawnInterval)
 {
@@ -25,7 +26,7 @@ void PowerUpManager::Update(float deltaT, std::vector<Entity*>& entities, int cu
     {
         spawnTimer = intervalSpawn;
 
-        int randomType = GetRandomValue(1, 3);
+        int randomType = GetRandomValue(1, 4);
         Collectible* newPowerUp = nullptr;
 
         Vector2 randomPos = { (float)GetRandomValue(50, 750), (float)GetRandomValue(50, 400) };
@@ -38,9 +39,13 @@ void PowerUpManager::Update(float deltaT, std::vector<Entity*>& entities, int cu
         {
              newPowerUp = new ScoreMultiplyer(randomPos, 0, 20.0f, 20.0f);
         }
-        else
+        else if (randomType == 3)
         {
 			newPowerUp = new ExtraSpeed(randomPos, 0, 20.0f, 20.0f);
+        }
+        else
+        {
+            newPowerUp = new AddScore(randomPos, 0, 20.0f, 20.0f);
         }
 
          if (newPowerUp != nullptr)

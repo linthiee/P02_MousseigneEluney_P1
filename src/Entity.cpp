@@ -29,6 +29,3 @@ void Entity::IsCollidingWith(Entity* otherEntity)
 
 void Entity::TakeDamage() {}
 
-void Entity::Update() {}
-
-void Entity::Draw() {}

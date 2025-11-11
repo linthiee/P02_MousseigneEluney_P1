@@ -30,7 +30,7 @@ public:
 	virtual void IsCollidingWith(Entity* otherEntity);
 	virtual void TakeDamage();
 
-	virtual void Update();
-	virtual void Draw();
+	virtual void Update() = 0;
+	virtual void Draw() = 0;
 };
 
