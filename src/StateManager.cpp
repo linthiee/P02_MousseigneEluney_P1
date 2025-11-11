@@ -11,6 +11,7 @@ StateManager::StateManager(Player* player)
 
 	multiplier = 1;
 	multiplierTimer = 0.0f;
+
 	speedMultiplier = 1.0f;     
 	speedMultiplierTimer = 0.0f; 
 }

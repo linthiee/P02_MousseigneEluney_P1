@@ -1,12 +1,13 @@
 #pragma once
 
 #include "raylib.h"
-#include <vector>
 
-class Entity;
-class Player;
-class StateManager;
-class PowerUpManager;
+#include "Entity.h"
+#include "Player.h"
+#include "StateManager.h"
+#include "PowerUpManager.h"
+
+#include <vector>
 
 class Game
 {

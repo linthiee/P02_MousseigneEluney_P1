@@ -1,15 +1,11 @@
 #include "Game.h"
 
-#include "globals.h"    
-#include "Entity.h"
-#include "Player.h"
-#include "Enemy.h"
 #include "Collectible.h"  
 #include "ExtraLife.h"
 #include "ScoreMultiplyer.h"
 #include "ExtraSpeed.h"
-#include "StateManager.h"
-#include "PowerUpManager.h"
+#include "globals.h"
+#include "Enemy.h"
 
 #include <ctime> 
 
