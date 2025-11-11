@@ -110,6 +110,7 @@ void Player::Update()
 	if (isInvincible)
 	{
 		invincibilityTimer -= deltaT; 
+
 		if (invincibilityTimer <= 0.0f)
 		{
 			isInvincible = false; 
@@ -118,19 +119,19 @@ void Player::Update()
 
 	velocity = { 0.0f, 0.0f };
 
-	if (IsKeyDown(KEY_UP))
+	if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W))
 	{
 		velocity.y -= 1.0f;
 	}
-	if (IsKeyDown(KEY_LEFT))
+	if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A))
 	{
 		velocity.x -= 1.0f;
 	}
-	if (IsKeyDown(KEY_RIGHT))
+	if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D))
 	{
 		velocity.x += 1.0f;
 	}
-	if (IsKeyDown(KEY_DOWN))
+	if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S))
 	{
 		velocity.y += 1.0f;
 	}

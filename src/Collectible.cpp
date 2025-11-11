@@ -20,7 +20,4 @@ void Collectible::IsCollidingWith(Entity* otherEntity)
 
 void Collectible::Update() {}
 
-void Collectible::Draw()
-{
-	DrawRectangleV(position, { width, height }, GREEN);
-}
+void Collectible::Draw() {}

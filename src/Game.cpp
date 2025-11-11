@@ -116,7 +116,9 @@ void Game::Draw()
         color.r = 0;
         color.g = 0;
         color.b = 0;
+
         DrawRectangle(0, 0, screenWidth, screenHeight, color);
+
         DrawText("GAME OVER", screenWidth / 2 - 100, 20, 40, RED);
 
         if (hasWon)
@@ -142,6 +144,7 @@ void Game::UpdateDeltaTime()
 void Game::InitializeEnemyQuant()
 {
     int enemyQuant = GetRandomValue(3, 4);
+
     float enemyWidth = 50.0f;
     float enemyHeight = 50.0f;
 
@@ -187,7 +190,9 @@ bool Game::IsCollidingWithAny(Vector2 newPos, float newWidth, float newHeight)
 Vector2 Game::GetSafeSpawnPosition(float newWidth, float newHeight)
 {
     Vector2 newPos = { 0, 0 };
+
     bool isSafe = false;
+
     int attempts = 0;
 
     do

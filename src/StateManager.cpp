@@ -57,6 +57,7 @@ void StateManager::Draw()
 	for (int i = 0; i < player->GetLife(); i++)
 	{
 		int xPos = startX + (i * (rectWidth + spacing));
+
 		DrawRectangle(xPos, 5, rectWidth, rectHeight, BLUE);
 	}
 	DrawText(TextFormat("Time: %.2f", timer), 650, 10, 20, WHITE);
